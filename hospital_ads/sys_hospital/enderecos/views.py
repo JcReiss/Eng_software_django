@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets, permissions
+from .models import Endereco
+from .serializers import EnderecoSerializer
 
-# Create your views here.
+class EnderecoViewSet(viewsets.ModelViewSet):
+    queryset = Endereco.objects.all()
+    serializer_class = EnderecoSerializer
+    permission_classes = [permissions.AllowAny]

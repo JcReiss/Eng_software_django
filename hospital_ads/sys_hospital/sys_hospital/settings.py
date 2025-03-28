@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+5c%c!mvhrhxrj77axbmqafss7t+#i+g&yv2of^p-f9%%vr)lj'
+SECRET_KEY = 'django-insecure--ztxg0ln(kqs#7k7#l755q73pjrd^n@*&lo+(e6*8*j3q6&lcl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,17 +30,18 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
- INSTALLED_APPS = [
-       'django.contrib.admin',
-       'django.contrib.auth',
-       'django.contrib.contenttypes',
-       'django.contrib.sessions',
-       'django.contrib.messages',
-       'django.contrib.staticfiles',
-       'rest_framework',  
-       'enderecos',       
-       'pacientes',       
-   ]
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'enderecos',
+    'pacientes',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,7 +50,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'sys_hospital.urls'
 
 TEMPLATES = [
@@ -85,6 +85,10 @@ DATABASES = {
        }
    }
 
+REST_FRAMEWORK = {  
+    'DEFAULT_AUTHENTICATION_CLASSES': [],  
+    'DEFAULT_PERMISSION_CLASSES': [],  
+}
 
 
 # Password validation
@@ -111,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Cuiaba'
 
 USE_I18N = True
 
@@ -127,9 +131,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-REST_FRAMEWORK = {  
-    'DEFAULT_AUTHENTICATION_CLASSES': [],  
-    'DEFAULT_PERMISSION_CLASSES': [],  
-}
-
