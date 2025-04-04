@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets, permissions
+from .models import Especializacoes
+from .serializers import EspecializacoesSerializer
 
-# Create your views here.
+class EspecializacoesViewset(viewsets.ModelViewSet):
+    queryset =  Especializacoes.objects.all()
+    serializer_class = EspecializacoesSerializer
+    permission_classes = [permissions.AllowAny]
