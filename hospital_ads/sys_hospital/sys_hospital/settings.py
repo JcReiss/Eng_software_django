@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'enfermeiros',
     'medicos',
     'consultas',
+    'drf_spectacular', 
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Systema de Hospital',  
+    'DESCRIPTION': 'API para gerenciar pacientes, médicos, enfermeiros e consultas.',  
+    'VERSION': '1.0.0',  
+}
